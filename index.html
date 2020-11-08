@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Snake</title>
+	<link rel="stylesheet" href="style.css">
+	<script src="https://code.jquery.com/jquery-2.1.0.js"></script>
+	<script src='./src/js.js'></script>
+</head>
+
+<body>
+	<div class="params">
+		<div class="param_text">
+			<h2>Висота поля (px)</h2>
+			<h2>Ширина поля (px)</h2>
+			<h2>сторона квадрата (px)</h2>
+			<h2>розмір границі (px)</h2>
+		</div>
+		<div class="param_inputs">
+			<div class="param_input">
+				<input type="number" id="heightInput">
+			</div>
+			<div class="param_input">
+				<input type="number" id="widthInput">
+			</div>
+			<div class="param_input">
+				<input type="number" id="sizeInput">
+			</div>
+			<div class="param_input">
+				<input type="number" id="borderInput">
+			</div>
+		</div>
+	</div>
+	<div class="stBtn">
+		<button type="button" onclick="startGame()">старт</button>
+	</div>
+	<canvas id="canvas" height="500" width="750"></canvas>
+	<div class="score">
+		<h2>Рахунок: <output id="scoreOut"></output></h2>
+		
+	</div>
+	<script>
+		document.getElementById("heightInput").value = 500;
+		document.getElementById("widthInput").value = 750;
+		document.getElementById("sizeInput").value = 15;
+		document.getElementById("borderInput").value = 0;
+		document.getElementById("scoreOut").value = 0;
+		const canv = document.getElementById("canvas");
+		const score = document.getElementById("scoreOut");
+		startGame = () => {
+			getParams(
+				canv,
+				document.getElementById("heightInput").value,
+				document.getElementById("widthInput").value,
+				document.getElementById("sizeInput").value,
+				document.getElementById("borderInput").value,
+				score
+				)
+			game(canv);
+		}
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+.params, .score {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.param_text {
+  padding: 0px;
+  margin: 0px;
+}
+
+h2 {
+  padding: 0;
+  margin: 0;
+}
+
+.param_input {
+  padding: 2px;
+  margin: 2px;
+}
+
+.stBtn {
+  padding-top: 2rem;
+}
